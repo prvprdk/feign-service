@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          external-service:
+            url: http://localhost:${wiremock.server.port}

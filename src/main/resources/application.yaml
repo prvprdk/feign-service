@@ -2,10 +2,17 @@ spring:
   application:
     name: feign-app
 
-cloud:
-  openfeign:
+  cloud:
+    openfeign:
+      client:
+        config:
+          external-service:
+            url: http://localhost:3000
+  feign:
     client:
       config:
-        external-client:
-          url: http://localhost:8089
-
+        default:
+          retry:
+            max-attempts: 3
+            max-period: 5
+            period: 1
